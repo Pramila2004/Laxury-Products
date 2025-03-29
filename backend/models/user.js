@@ -14,37 +14,18 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true, // Mandatory
     },
-    avatar: {
+    phone: {
       type: String,
-      default: 'images/user.png',
+    },
+    address: {
+      type: String,
     },
     role: {
       type: String,
       enum: ['admin', 'user'],
       default: 'user',
     },
-    bio: {
-      type: String,
-      default: '',
-    },
-    likedRecipes: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Recipe', // Assuming a Recipe model exists
-      },
-    ],
-    followers: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-      },
-    ],
-    following: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-      },
-    ],
+   
   },
   { timestamps: true }
 );
