@@ -4,6 +4,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import connectDB from './db/db.js';
 import authRoutes from './routes/auth.js'
+import productRoutes from './routes/product.js'
 
 const allowedOrigins = [
     'http://localhost:3000', // Development frontend
@@ -40,6 +41,7 @@ app.use(cors(corsOptions));
 
 
 app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
 
 
 // Start the server
